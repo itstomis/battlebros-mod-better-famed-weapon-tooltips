@@ -312,3 +312,4 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 			}
 		}
 	}
+});
