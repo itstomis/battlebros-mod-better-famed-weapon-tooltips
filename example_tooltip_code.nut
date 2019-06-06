@@ -46,7 +46,20 @@ function getTooltip()
 	if (this.m.ConditionMax > 1)
 	{
 		//changed!
-		if (ORIGINALConditionMax != this.m.ConditionMax)
+		if (this.m.ConditionMax > ORIGINALConditionMax)
+		{
+			result.push({
+				id = 4,
+				type = "progressbar",
+				icon = "ui/icons/asset_supplies.png",
+				value = this.m.Condition,
+				valueMax = this.m.ConditionMax,
+				text = "" + this.m.Condition + " / " + this.m.ConditionMax + " (+" + (this.m.ConditionMax - ORIGINALConditionMax) + ")",
+				style = "armor-body-slim"
+			});
+		}
+		//changed!
+		else if (this.m.ConditionMax < ORIGINALConditionMax)
 		{
 			result.push({
 				id = 4,
@@ -75,7 +88,7 @@ function getTooltip()
 	if (this.m.RegularDamage > 0)
 	{
 		//changed!
-		if (ORIGINALRegularDamage != this.m.RegularDamage && ORIGINALRegularDamageMax != this.m.RegularDamageMax)
+		if (this.m.RegularDamage != ORIGINALRegularDamage && this.m.RegularDamageMax != ORIGINALRegularDamageMax)
 		{
 			result.push({
 				id = 4,
@@ -84,7 +97,7 @@ function getTooltip()
 				text = "Damage of [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamage + "[/color] ([color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.RegularDamage - ORIGINALRegularDamage) + "[/color]) - [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamageMax + "[/color] ([color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.RegularDamageMax - ORIGINALRegularDamageMax) + "[/color])"
 			});
 		}
-		else if (ORIGINALRegularDamage != this.m.RegularDamage && ORIGINALRegularDamageMax == this.m.RegularDamageMax)
+		else if (this.m.RegularDamage != ORIGINALRegularDamage && this.m.RegularDamageMax == ORIGINALRegularDamageMax)
 		{
 			result.push({	
 				id = 4,
@@ -93,7 +106,7 @@ function getTooltip()
 				text = "Damage of [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamage + "[/color] ([color=" + this.Const.UI.Color.PositiveValue + "]+" + (this.m.RegularDamage - ORIGINALRegularDamage) + "[/color]) - [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamageMax + "[/color]"
 			});
 		}
-		else if (ORIGINALRegularDamage == this.m.RegularDamage && ORIGINALRegularDamageMax != this.m.RegularDamageMax)
+		else if (this.m.RegularDamage == ORIGINALRegularDamage && this.m.RegularDamageMax != ORIGINALRegularDamageMax)
 		{
 			result.push({	
 				id = 4,
@@ -116,7 +129,7 @@ function getTooltip()
 	if (this.m.DirectDamageMult > 0)
 	{
 		//changed!
-		if (ORIGINALDirectDamageMult != this.m.DirectDamageMult || ORIGINALDirectDamageAdd != this.m.DirectDamageAdd)
+		if (this.m.DirectDamageMult != ORIGINALDirectDamageMult || this.m.DirectDamageAdd != ORIGINALDirectDamageAdd)
 		{
 			result.push({
 				id = 64,
@@ -139,7 +152,7 @@ function getTooltip()
 	if (this.m.ArmorDamageMult > 0)
 	{
 		//changed!
-		if (ORIGINALArmorDamageMult != this.m.ArmorDamageMult)
+		if (this.m.ArmorDamageMult != ORIGINALArmorDamageMult)
 		{
 			result.push({
 				id = 5,
@@ -162,7 +175,7 @@ function getTooltip()
 	if (this.m.ShieldDamage > 0)
 	{
 		//changed!
-		if (ORIGINALShieldDamage != this.m.ShieldDamage)
+		if (this.m.ShieldDamage != ORIGINALShieldDamage)
 		{
 			result.push({
 				id = 6,
@@ -185,7 +198,7 @@ function getTooltip()
 	if (this.m.ChanceToHitHead > 0)
 	{
 		//changed!
-		if (ORIGINALChanceToHitHead != this.m.ChanceToHitHead)
+		if (this.m.ChanceToHitHead != ORIGINALChanceToHitHead)
 		{
 			result.push({
 				id = 9,
@@ -208,7 +221,7 @@ function getTooltip()
 	if (this.m.AdditionalAccuracy > 0)
 	{
 		//changed!
-		if (ORIGINALAdditionalAccuracy != this.m.AdditionalAccuracy)
+		if (this.m.AdditionalAccuracy != ORIGINALAdditionalAccuracy)
 		{
 			result.push({
 				id = 10,
@@ -250,7 +263,7 @@ function getTooltip()
 	if (this.m.StaminaModifier < 0)
 	{
 		//changed!
-		if (ORIGINALStaminaModifier != this.m.StaminaModifier)
+		if (this.m.StaminaModifier != ORIGINALStaminaModifier)
 		{
 			result.push({
 				id = 8,
@@ -273,7 +286,7 @@ function getTooltip()
 	if (this.m.FatigueOnSkillUse > 0)
 	{
 		//changed!
-		if (ORIGINALFatigueOnSkillUse != this.m.FatigueOnSkillUse)
+		if (this.m.FatigueOnSkillUse != ORIGINALFatigueOnSkillUse)
 		{
 			result.push({
 				id = 8,
@@ -295,7 +308,7 @@ function getTooltip()
 	else if (this.m.FatigueOnSkillUse < 0)
 	{
 		//changed!
-		if (ORIGINALFatigueOnSkillUse != this.m.FatigueOnSkillUse)
+		if (this.m.FatigueOnSkillUse != ORIGINALFatigueOnSkillUse)
 		{
 			result.push({
 				id = 8,
@@ -320,7 +333,7 @@ function getTooltip()
 		if (this.m.Ammo != 0)
 		{
 			//changed!
-			if (ORIGINALAmmoMax != this.m.AmmoMax)
+			if (this.m.AmmoMax != ORIGINALAmmoMax)
 			{
 				result.push({
 					id = 10,
