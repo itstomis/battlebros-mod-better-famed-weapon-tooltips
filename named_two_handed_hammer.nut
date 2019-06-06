@@ -108,7 +108,7 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 				});
 			}
 			//changed!
-			else if (this.m.ConditionMax < ORIGINALConditionMax)
+			else if (this.m.ConditionMax < 120.0)
 			{
 				result.push({
 					id = 4,
@@ -184,7 +184,7 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 					id = 64,
 					type = "text",
 					icon = "ui/icons/direct_damage.png",
-					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor((this.m.DirectDamageMult + this.m.DirectDamageAdd) * 100) + "%[/color] of damage ignores armor ([color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor((this.m.DirectDamageMult - 0.5 + this.m.DirectDamageAdd) * 100) + "%[/color])"
+					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor((this.m.DirectDamageMult) * 100) + "%[/color] of damage ignores armor ([color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor((this.m.DirectDamageMult - 0.5) * 100) + "%[/color])"
 				});
 			}
 			else //original text
@@ -193,7 +193,7 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 					id = 64,
 					type = "text",
 					icon = "ui/icons/direct_damage.png",
-					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor((this.m.DirectDamageMult + this.m.DirectDamageAdd) * 100) + "%[/color] of damage ignores armor"
+					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor((this.m.DirectDamageMult) * 100) + "%[/color] of damage ignores armor"
 				});
 			}
 		}
